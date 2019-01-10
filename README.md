@@ -5,11 +5,10 @@ The main point of difference with this image is:
 
 * Persistence is supported via mounting volumes to a Docker container
 * Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed
-* Added SNMP 
+* Added snmp packages and Synology NAS MIBS 
 
 ## Versions
 
-* Docker Image:      2.2.0
 * Ubuntu:            18.04
 * InfluxDB:          1.7.2
 * Telegraf (StatsD): 1.9.2-1

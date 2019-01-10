@@ -1,8 +1,21 @@
 version: '3'
 
 services:
-  webapp:
-    build: artlov/docker-statsd-influxdb-grafana .
+  app:
+#    build: artlov/docker-telegraf-influxdb-grafana .
+    image: "artlov/docker-telegraf-influxdb-grafana"
+    ports:
+	- "3003:3003"
+	- "3004:8888"
+	- "8086:8086"
+	- "22022:22"
+	- "8125:8125/udp"
+    volumes:
+	- /volume1/docker/influxdb:/var/lib/influxdb
+	- /volume1/docker/grafana:/var/lib/grafana
+	- /volume1/docker/backups:/var/backups
+
+
 
 #test:
 #  override:
@@ -10,3 +23,8 @@ services:
 #    - curl --retry 10 --retry-delay 5 -v http://localhost:3003
 #    - curl --retry 10 --retry-delay 5 -v http://localhost:3004
 #    - curl --retry 10 --retry-delay 5 -v http://localhost:8086
+
+
+# docker-compose up
+# docker-compose stop
+# docker-compose down
