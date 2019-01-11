@@ -19,8 +19,7 @@ The main points of this image are:
 To start the container the first time launch:
 
 ```sh
-docker run --ulimit nofile=66000:66000 \
-  -d \
+docker run --ulimit nofile=66000:66000 -d \
   --name docker-telegraf-influxdb-grafana \
   -p 3003:3003 \
   -p 3004:8888 \
