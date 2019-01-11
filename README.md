@@ -1,7 +1,7 @@
 # Docker Image with Telegraf, InfluxDB and Grafana
-This is a Docker image based on the [Docker Image with Telegraf (StatsD), InfluxDB and Grafana](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana) from [Samuele Bistoletti](https://github.com/samuelebistoletti).
+This is a Docker image based on the [Docker Image with Telegraf (StatsD), InfluxDB and Grafana](https://github.com/samuelebistoletti/docker-statsd-influxdb-grafana) from [Samuele Bistoletti](https://github.com/samuelebistoletti) and [Docker Image with InfluxDB and Grafana](https://github.com/philhawthorne/docker-influxdb-grafana) from [Phil Hawthorne](https://github.com/philhawthorne) 
 
-The main point of difference with this image is:
+The main points of this image are:
 
 * Persistence is supported via mounting volumes to a Docker container
 * Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed
