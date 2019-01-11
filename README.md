@@ -61,7 +61,12 @@ Host		Container	Service
 ```sh
 ssh root@localhost -p 22022
 ```
-Password: root
+By default root password login disabled. If ssh connection needed, please configure key authentication.
+
+Access from docker host:
+```
+docker exec -it <container id> bash
+```
 
 ## Grafana
 
