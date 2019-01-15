@@ -1,15 +1,15 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="artlov@gmail.com"
+LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
 ENV TELEGRAF_VERSION 1.9.2-1
-ENV INFLUXDB_VERSION 1.7.2
-ENV GRAFANA_VERSION  5.3.2
-ENV CHRONOGRAF_VERSION 1.7.5
+ENV INFLUXDB_VERSION 1.7.3
+ENV GRAFANA_VERSION  5.4.3
+ENV CHRONOGRAF_VERSION 1.7.6
 
 ENV GF_DATABASE_TYPE=sqlite3
 
@@ -86,9 +86,6 @@ RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${G
 ADD grafana/provisioning /etc/grafana/provisioning
 ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
-
-# Update mibs
-#RUN /usr/bin/download-mibs
 
 # Synology SNMP
 COPY synology/synology.conf /etc/telegraf/telegraf.d
