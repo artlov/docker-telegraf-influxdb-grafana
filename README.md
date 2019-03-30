@@ -10,10 +10,10 @@ The main points of this image are:
 ## Versions
 
 * Ubuntu:            18.04
-* InfluxDB:          1.7.3
-* Chronograf:        1.7.6
-* Telegraf:          1.9.2-1
-* Grafana:           5.4.3
+* InfluxDB:          1.7.5
+* Chronograf:        1.7.9
+* Telegraf:          1.10.1-1
+* Grafana:           6.0.2
 
 ## Quick Start
 
