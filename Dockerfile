@@ -94,7 +94,7 @@ RUN tar -xvzf /tmp/Synology_MIB_File.tar.gz -C /usr/share/snmp/mibs
 RUN chown root:root /usr/share/snmp/mibs
 RUN chmod 755 /usr/share/snmp/mibs
 
-EXPOSE 22/tcp 3003/tcp 3004/tcp 8086/tcp 8125/udp
+EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp
 #VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
 
 # Cleanup
