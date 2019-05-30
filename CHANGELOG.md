@@ -13,6 +13,6 @@ Docker Telegraf InfluxDB Grafana image
 
 * Grafana, Influxdb, Telegraf and Chronograf versions upgrades
 
-## v1.3.0 (2019-05-29)
+## v1.3.0pre (2019-05-29)
 
 * Grafana, Influxdb, Telegraf and Chronograf version upgrades
