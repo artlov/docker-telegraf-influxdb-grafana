@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 # Default versions
 ENV TELEGRAF_VERSION 1.10.4-1
 ENV INFLUXDB_VERSION 1.7.6
-ENV GRAFANA_VERSION  6.1.6
+ENV GRAFANA_VERSION  6.2.1
 ENV CHRONOGRAF_VERSION 1.7.11
 
 ENV GF_DATABASE_TYPE=sqlite3
@@ -95,7 +95,7 @@ RUN chown root:root /usr/share/snmp/mibs
 RUN chmod 755 /usr/share/snmp/mibs
 
 EXPOSE 22/tcp 3003/tcp 3004/tcp 8086/tcp 8125/udp
-VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
+#VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
 
 # Cleanup
 RUN apt-get clean && \
