@@ -3,9 +3,9 @@ This is a Docker image based on the [Docker Image with Telegraf (StatsD), Influx
 
 The main points of this image are:
 
-* Persistence is supported via mounting volumes to a Docker container
-* Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed
-* Added snmp packages and Synology NAS MIBS 
+* Persistence is supported via mounting volumes to a Docker container.
+* Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed.
+* Added snmp packages and Synology NAS MIBS.
 
 ## Versions
 
@@ -13,7 +13,7 @@ The main points of this image are:
 * InfluxDB:          1.7.6
 * Chronograf:        1.7.11
 * Telegraf:          1.10.4-1
-* Grafana:           6.1.6
+* Grafana:           6.2.1
 
 ## Quick Start
 
