@@ -84,7 +84,7 @@ RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${G
 
 # Configure Grafana with provisioning
 ADD grafana/provisioning /etc/grafana/provisioning
-ADD grafana/dashboards /var/lib/grafana/dashboards
+#ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
 
 # Synology SNMP
