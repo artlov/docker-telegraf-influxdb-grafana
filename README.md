@@ -3,9 +3,9 @@ This is a Docker image based on the [Docker Image with Telegraf (StatsD), Influx
 
 The main points of this image are:
 
-* Persistence is supported via mounting volumes to a Docker container
-* Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed
-* Added snmp packages and Synology NAS MIBS 
+* Persistence is supported via mounting volumes to a Docker container.
+* Grafana will store its data in SQLite files instead of a MySQL table on the container, so MySQL is not installed.
+* Added snmp packages and Synology NAS MIBS.
 
 ## Versions
 
@@ -13,7 +13,7 @@ The main points of this image are:
 * InfluxDB:          1.7.6
 * Chronograf:        1.7.11
 * Telegraf:          1.10.4-1
-* Grafana:           6.1.6
+* Grafana:           6.2.1
 
 ## Quick Start
 
@@ -23,7 +23,7 @@ To start the container the first time launch:
 docker run --ulimit nofile=66000:66000 -d \
   --name docker-telegraf-influxdb-grafana \
   -p 3003:3003 \
-  -p 3004:8888 \
+  -p 3004:3004 \
   -p 8086:8086 \
   -p 22022:22 \
   -p 8125:8125/udp \
@@ -99,9 +99,11 @@ Now you are ready to add your first dashboard and launch some query on database.
 
 ## InfluxDB
 
-### Web Interface
+### Chronograf Web Interface
 
 Open <http://localhost:3004>
+
+InfluxDB Connection:
 
 ```
 Username: root
@@ -111,5 +113,5 @@ Port: 8086
 
 ### InfluxDB Shell (CLI)
 
-1. Establish a ssh connection with the container
+1. Establish a ssh or docker exec connection with the container
 2. Launch `influx` to open InfluxDB Shell (CLI)

@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 # Default versions
 ENV TELEGRAF_VERSION 1.10.4-1
 ENV INFLUXDB_VERSION 1.7.6
-ENV GRAFANA_VERSION  6.1.6
+ENV GRAFANA_VERSION  6.2.1
 ENV CHRONOGRAF_VERSION 1.7.11
 
 ENV GF_DATABASE_TYPE=sqlite3
@@ -84,7 +84,7 @@ RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_${G
 
 # Configure Grafana with provisioning
 ADD grafana/provisioning /etc/grafana/provisioning
-ADD grafana/dashboards /var/lib/grafana/dashboards
+#ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
 
 # Synology SNMP
@@ -94,8 +94,8 @@ RUN tar -xvzf /tmp/Synology_MIB_File.tar.gz -C /usr/share/snmp/mibs
 RUN chown root:root /usr/share/snmp/mibs
 RUN chmod 755 /usr/share/snmp/mibs
 
-EXPOSE 22/tcp 3003/tcp 3004/tcp 8086/tcp 8125/udp
-VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
+EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp
+#VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
 
 # Cleanup
 RUN apt-get clean && \
