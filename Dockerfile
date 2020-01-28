@@ -40,7 +40,7 @@ RUN apt-get -y update && \
   snmp \
   snmp-mibs-downloader \
   wget && \
- curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
+ curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
  apt-get install -y nodejs
 
 # Configure Supervisord, SSH and base env
