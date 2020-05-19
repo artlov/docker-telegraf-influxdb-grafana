@@ -9,11 +9,11 @@ The main points of this image are:
 
 ## Versions
 
-* Ubuntu:            18.04
-* InfluxDB:          1.7.9
-* Chronograf:        1.7.17
-* Telegraf:          1.13.2-1
-* Grafana:           6.6.0
+* Ubuntu:            20.04
+* InfluxDB:          1.8.0
+* Chronograf:        1.8.4
+* Telegraf:          1.14.2-1
+* Grafana:           7.0.0
 
 ## Quick Start
 
