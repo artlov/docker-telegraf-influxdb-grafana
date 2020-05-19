@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
@@ -6,9 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
-ENV TELEGRAF_VERSION 1.13.2-1
-ENV INFLUXDB_VERSION 1.7.9
-ENV GRAFANA_VERSION  6.6.0
+ENV TELEGRAF_VERSION 1.14.2-1
+ENV INFLUXDB_VERSION 1.8.4
+ENV GRAFANA_VERSION  7.0.0
 ENV CHRONOGRAF_VERSION 1.7.17
 
 ENV GF_DATABASE_TYPE=sqlite3
@@ -40,7 +40,7 @@ RUN apt-get -y update && \
   snmp \
   snmp-mibs-downloader \
   wget && \
- curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+ curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
  apt-get install -y nodejs
 
 # Configure Supervisord, SSH and base env
