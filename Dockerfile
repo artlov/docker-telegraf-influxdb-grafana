@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
@@ -6,10 +6,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Default versions
-ENV TELEGRAF_VERSION 1.10.4-1
-ENV INFLUXDB_VERSION 1.7.6
-ENV GRAFANA_VERSION  6.2.1
-ENV CHRONOGRAF_VERSION 1.7.11
+ENV TELEGRAF_VERSION 1.14.2-1
+ENV INFLUXDB_VERSION 1.8.0
+ENV GRAFANA_VERSION  7.0.0
+ENV CHRONOGRAF_VERSION 1.8.4
 
 ENV GF_DATABASE_TYPE=sqlite3
 
@@ -31,6 +31,7 @@ RUN apt-get -y update && \
   htop \
   libfontconfig \
   nano \
+  mc \
   net-tools \
   openssh-server \
   supervisor \
@@ -40,7 +41,7 @@ RUN apt-get -y update && \
   snmp \
   snmp-mibs-downloader \
   wget && \
- curl -sL https://deb.nodesource.com/setup_11.x | bash - && \
+ curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
  apt-get install -y nodejs
 
 # Configure Supervisord, SSH and base env
