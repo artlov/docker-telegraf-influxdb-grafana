@@ -1,9 +1,10 @@
 #!/bin/bash
 
 grafana_install_plugin_command="/usr/sbin/grafana-cli"
-grafana_install_plugin_args=("--pluginsDir" "/var/lib/grafana/data/plugins" "plugins" "install")
+grafana_install_plugin_args=("--pluginsDir" "/var/lib/grafana/plugins" "plugins" "install")
 grafana_plugin_list=(
   "grafana-image-renderer"
+  "andig-darksky-datasource"
   "grafana-clock-panel"
   "grafana-piechart-panel"
   "michaeldmoore-annunciator-panel"
@@ -46,11 +47,11 @@ for plugin in "${grafana_plugin_list[@]}"; do
   "${grafana_install_plugin_command[@]}" "${grafana_install_plugin_args[@]}" "${plugin}"
 done
 
-chmod g+rwX /var/lib/grafana/data/plugins
+chmod g+rwX /var/lib/grafana/plugins
 
-# The Grafana Helm chart mounts the data directory at "/var/lib/grafana/data"
+# The Grafana Helm chart mounts the data directory at "/var/lib/grafana"
 # Therefore, all the plugins installed when building the image will be lost
 # As a workaround, we can move them to a "default-plugins" directory and recover them
 # during the 1st boot of the container
 #mkdir -p /var/lib/grafana/default-plugins
-#mv /var/lib/grafana/data/plugins/* /var/lib/grafana/default-plugins/
+#mv /var/lib/grafana/plugins/* /var/lib/grafana/default-plugins/

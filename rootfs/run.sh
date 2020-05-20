@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
 : "${GF_PATHS_CONFIG:=/etc/grafana/grafana.ini}"
-: "${GF_PATHS_DATA:=/var/lib/grafana/data}"
+: "${GF_PATHS_DATA:=/var/lib/grafana}"
 : "${GF_PATHS_LOGS:=/var/log/grafana}"
-: "${GF_PATHS_PLUGINS:=/var/lib/grafana/data/plugins}"
+: "${GF_PATHS_PLUGINS:=/var/lib/grafana/plugins}"
 : "${GF_PATHS_DEFAULT_PLUGINS:=/var/lib/grafana/default-plugins}"
 : "${GF_PATHS_PROVISIONING:=/etc/grafana/provisioning}"
 

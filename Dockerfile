@@ -14,7 +14,7 @@ ENV CHRONOGRAF_VERSION 1.8.4
 ENV GF_DATABASE_TYPE=sqlite3
 
 # Fix bad proxy issue
-COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
+#COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
 
 # Clear previous sources
 RUN rm /var/lib/apt/lists/* -vf
@@ -30,7 +30,6 @@ RUN apt-get -y update && \
   git \
   htop \
   libfontconfig \
-  nano \
   mc \
   net-tools \
   openssh-server \
@@ -85,7 +84,6 @@ RUN wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb
 
 # Configure Grafana with provisioning
 ADD grafana/provisioning /etc/grafana/provisioning
-#ADD grafana/dashboards /var/lib/grafana/dashboards
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
 
 # Synology SNMP
