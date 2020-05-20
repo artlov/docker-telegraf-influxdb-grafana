@@ -31,6 +31,7 @@ RUN apt-get -y update && \
   htop \
   libfontconfig \
   nano \
+  mc \
   net-tools \
   openssh-server \
   supervisor \
