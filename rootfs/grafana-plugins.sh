@@ -52,5 +52,5 @@ chmod g+rwX /var/lib/grafana/data/plugins
 # Therefore, all the plugins installed when building the image will be lost
 # As a workaround, we can move them to a "default-plugins" directory and recover them
 # during the 1st boot of the container
-mkdir -p /var/lib/grafana/default-plugins
-mv /var/lib/grafana/data/plugins/* /var/lib/grafana/default-plugins/
+#mkdir -p /var/lib/grafana/default-plugins
+#mv /var/lib/grafana/data/plugins/* /var/lib/grafana/default-plugins/
