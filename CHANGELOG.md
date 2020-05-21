@@ -14,6 +14,7 @@ Docker Telegraf InfluxDB Grafana image
 * Grafana, Influxdb, Telegraf and Chronograf version upgrades
 
 ## v1.3.0 (2019-05-31)
+<<<<<<< HEAD
 
 * Grafana, Influxdb, Telegraf and Chronograf version upgrades
 * Small configurations tuning
@@ -26,3 +27,16 @@ Docker Telegraf InfluxDB Grafana image
 
 * Upgrade Grafana, Influxdb, Telegraf, Chronograf and Nodesource and Ubuntu versions
 
+=======
+
+* Grafana, Influxdb, Telegraf and Chronograf version upgrades
+* Small configurations tuning
+
+## v1.4.0 (2020-01-28)
+
+* Upgrade Grafana, Influxdb, Telegraf, Chronograf and Nodesource versions
+
+## v1.5.0 (2020-05-20)
+
+* Upgrade Grafana, Influxdb, Telegraf, Chronograf and Nodesource and Ubuntu versions
+>>>>>>> testing
