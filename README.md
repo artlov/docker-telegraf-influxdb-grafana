@@ -21,7 +21,7 @@ To start the container the first time launch:
 
 ```sh
 docker run --ulimit nofile=66000:66000 -d \
-  --name artlov/docker-tig \
+  --name tig \
   -p 3003:3003 \
   -p 3004:8888 \
   -p 8086:8086 \
@@ -34,18 +34,18 @@ docker run --ulimit nofile=66000:66000 -d \
 ```
 
 You can replace `latest` with the desired version listed in changelog file.
-You can replace the variable `TZ` with your local time zone or remove this line to stay in the UTC time zone.
+Please replace the variable `TZ` with your local time zone or remove this line at all to stay in the UTC time zone.
 
 To stop the container launch:
 
 ```sh
-docker stop artlov/docker-tig
+docker stop tig
 ```
 
 To start the container again launch:
 
 ```sh
-docker start artlov/docker-tig
+docker start tig
 ```
 
 ## Mapped Ports
