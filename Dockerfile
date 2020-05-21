@@ -94,8 +94,8 @@ RUN chown root:root /usr/share/snmp/mibs
 RUN chmod 755 /usr/share/snmp/mibs
 
 # Install plugins
-COPY rootfs /
-RUN /grafana-plugins.sh
+COPY rootfs /tmp
+RUN /tmp/grafana-plugins.sh
 
 EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp
 #VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
