@@ -4,7 +4,7 @@ LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
-ENV TZ=Europe/Tallinn
+#ENV TZ=Europe/Tallinn
 
 # Default versions
 ENV TELEGRAF_VERSION 1.14.3-1
