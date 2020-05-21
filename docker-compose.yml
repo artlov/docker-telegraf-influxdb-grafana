@@ -3,13 +3,15 @@ version: '3'
 services:
   app:
 #    build: artlov/docker-tig .
-    image: "artlov/docker-tig"
+    image: "artlov/docker-telegraf-influxdb-grafana"
     ports:
       - "3003:3003"
       - "3004:8888"
       - "8086:8086"
       - "22022:22"
       - "8125:8125/udp"
+    environment:
+      - "TZ=Europe/Tallinn"
     volumes:
       - /volume1/docker/influxdb:/var/lib/influxdb
       - /volume1/docker/grafana:/var/lib/grafana

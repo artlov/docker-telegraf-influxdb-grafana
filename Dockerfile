@@ -4,9 +4,10 @@ LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
+ENV TZ=Europe/Tallinn
 
 # Default versions
-ENV TELEGRAF_VERSION 1.14.2-1
+ENV TELEGRAF_VERSION 1.14.3-1
 ENV INFLUXDB_VERSION 1.8.0
 ENV GRAFANA_VERSION  7.0.0
 ENV CHRONOGRAF_VERSION 1.8.4
@@ -71,10 +72,11 @@ RUN wget https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION
  dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && rm telegraf_${TELEGRAF_VERSION}_amd64.deb
 
 # Configure Telegraf
+RUN mv -f /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf.default 
 COPY telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 COPY telegraf/init.sh /etc/init.d/telegraf
 
-# Install chronograf
+# Install Chronograf
 RUN wget https://dl.influxdata.com/chronograf/releases/chronograf_${CHRONOGRAF_VERSION}_amd64.deb && \
  dpkg -i chronograf_${CHRONOGRAF_VERSION}_amd64.deb  && rm chronograf_${CHRONOGRAF_VERSION}_amd64.deb
 

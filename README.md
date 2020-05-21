@@ -12,7 +12,7 @@ The main points of this image are:
 * Ubuntu:            20.04
 * InfluxDB:          1.8.0
 * Chronograf:        1.8.4
-* Telegraf:          1.14.2-1
+* Telegraf:          1.14.3-1
 * Grafana:           7.0.0
 
 ## Quick Start
@@ -21,29 +21,31 @@ To start the container the first time launch:
 
 ```sh
 docker run --ulimit nofile=66000:66000 -d \
-  --name docker-telegraf-influxdb-grafana \
+  --name artlov/docker-tig \
   -p 3003:3003 \
-  -p 3004:3004 \
+  -p 3004:8888 \
   -p 8086:8086 \
   -p 22022:22 \
   -p 8125:8125/udp \
   -v /path/for/influxdb:/var/lib/influxdb \
   -v /path/for/grafana:/var/lib/grafana \
+  -e TZ=Europe/Tallinn \
   artlov/docker-telegraf-influxdb-grafana:latest
 ```
 
 You can replace `latest` with the desired version listed in changelog file.
+You can replace the variable `TZ` with your local time zone or remove this line to stay in the UTC time zone.
 
 To stop the container launch:
 
 ```sh
-docker stop docker-telegraf-influxdb-grafana
+docker stop artlov/docker-tig
 ```
 
 To start the container again launch:
 
 ```sh
-docker start docker-telegraf-influxdb-grafana
+docker start artlov/docker-tig
 ```
 
 ## Mapped Ports
@@ -53,7 +55,7 @@ Host		Container	Service
 
 3003		3003		grafana
 3004		8888		influxdb-admin (chronograf)
-8086		8086		influxdb
+8086		8086		influxdb HTTP API port
 8125		8125		telegraf
 22022		22		sshd
 ```
