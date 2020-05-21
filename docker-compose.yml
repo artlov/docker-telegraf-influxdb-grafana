@@ -10,11 +10,8 @@ services:
       - "8086:8086"
       - "22022:22"
       - "8125:8125/udp"
-<<<<<<< HEAD
-=======
     environment:
       - "TZ=Europe/Tallinn"
->>>>>>> testing
     volumes:
       - /volume1/docker/influxdb:/var/lib/influxdb
       - /volume1/docker/grafana:/var/lib/grafana

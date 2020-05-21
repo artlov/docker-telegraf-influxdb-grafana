@@ -7,11 +7,7 @@ ENV LANG C.UTF-8
 #ENV TZ=Europe/Tallinn
 
 # Default versions
-<<<<<<< HEAD
-ENV TELEGRAF_VERSION 1.14.2-1
-=======
 ENV TELEGRAF_VERSION 1.14.3-1
->>>>>>> testing
 ENV INFLUXDB_VERSION 1.8.0
 ENV GRAFANA_VERSION  7.0.0
 ENV CHRONOGRAF_VERSION 1.8.4
@@ -35,10 +31,6 @@ RUN apt-get -y update && \
   git \
   htop \
   libfontconfig \
-<<<<<<< HEAD
-  nano \
-=======
->>>>>>> testing
   mc \
   net-tools \
   openssh-server \
@@ -94,10 +86,6 @@ RUN wget https://dl.grafana.com/oss/release/grafana_${GRAFANA_VERSION}_amd64.deb
 
 # Configure Grafana with provisioning
 ADD grafana/provisioning /etc/grafana/provisioning
-<<<<<<< HEAD
-#ADD grafana/dashboards /var/lib/grafana/dashboards
-=======
->>>>>>> testing
 COPY grafana/grafana.ini /etc/grafana/grafana.ini
 
 # Synology SNMP
@@ -107,13 +95,10 @@ RUN tar -xvzf /tmp/Synology_MIB_File.tar.gz -C /usr/share/snmp/mibs
 RUN chown root:root /usr/share/snmp/mibs
 RUN chmod 755 /usr/share/snmp/mibs
 
-<<<<<<< HEAD
-=======
 # Install plugins
 COPY rootfs /tmp
 RUN /tmp/grafana-plugins.sh
 
->>>>>>> testing
 EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp
 #VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
 
