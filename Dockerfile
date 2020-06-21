@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:buster
 
 LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
@@ -25,19 +25,12 @@ RUN rm /var/lib/apt/lists/* -vf
 RUN apt-get -y update && \
  apt-get -y dist-upgrade && \
  apt-get -y install \
-  apt-utils \
   ca-certificates \
   curl \
-  git \
-  htop \
-  libfontconfig \
   mc \
   net-tools \
   openssh-server \
   supervisor \
-  gnupg \
-  gnupg2 \
-  gnupg1 \
   snmp \
   snmp-mibs-downloader \
   wget && \

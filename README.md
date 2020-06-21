@@ -9,7 +9,7 @@ The main points of this image are:
 
 ## Versions
 
-* Ubuntu:            20.04
+* Debian:            Buster
 * InfluxDB:          1.8.0
 * Chronograf:        1.8.4
 * Telegraf:          1.14.3-1
