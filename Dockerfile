@@ -23,16 +23,16 @@ RUN rm /var/lib/apt/lists/* -vf
 # Base dependencies
 
 RUN apt-get -y update && \
- apt-get -y dist-upgrade && \
+ apt-get -y upgrade && \
  apt-get -y install \
   ca-certificates \
+  libfontconfig1 \
   curl \
   mc \
   net-tools \
   openssh-server \
   supervisor \
   snmp \
-  snmp-mibs-downloader \
   wget && \
  curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
  apt-get install -y nodejs
