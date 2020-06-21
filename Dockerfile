@@ -25,6 +25,7 @@ RUN rm /var/lib/apt/lists/* -vf
 RUN apt-get -y update && \
  apt-get -y upgrade && \
  apt-get -y install \
+  apt-utils \
   ca-certificates \
   libfontconfig1 \
   curl \
