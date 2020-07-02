@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:buster-slim
 
 LABEL maintainer="Arthur Kono <artlov@gmail.com>"
 
@@ -7,9 +7,9 @@ ENV LANG C.UTF-8
 #ENV TZ=Europe/Tallinn
 
 # Default versions
-ENV TELEGRAF_VERSION 1.14.3-1
+ENV TELEGRAF_VERSION 1.14.5-1
 ENV INFLUXDB_VERSION 1.8.0
-ENV GRAFANA_VERSION  7.0.3
+ENV GRAFANA_VERSION  7.0.5
 ENV CHRONOGRAF_VERSION 1.8.4
 
 ENV GF_DATABASE_TYPE=sqlite3

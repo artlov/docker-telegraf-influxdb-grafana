@@ -12,8 +12,8 @@ The main points of this image are:
 * Debian:            Buster
 * InfluxDB:          1.8.0
 * Chronograf:        1.8.4
-* Telegraf:          1.14.3-1
-* Grafana:           7.0.3
+* Telegraf:          1.14.5-1
+* Grafana:           7.0.5
 
 ## Quick Start
 
