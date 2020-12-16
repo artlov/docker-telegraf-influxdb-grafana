@@ -29,3 +29,7 @@ Docker Telegraf InfluxDB Grafana image
 ## v1.6.0 (2020-10-31)
 
 * Grafana, Influxdb, Telegraf, Chronograf versions bumped
+
+## v1.7.0 (2020-12-16)
+
+* Grafana, Influxdb, Telegraf, Chronograf versions bumped
