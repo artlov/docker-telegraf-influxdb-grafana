@@ -11,8 +11,8 @@ The main points of this image are:
 
 * Ubuntu:            20.04
 * InfluxDB:          1.8.3
-* Chronograf:        1.8.7
-* Telegraf:          1.16.1
+* Chronograf:        1.8.9.1
+* Telegraf:          1.16.3
 * Grafana:           7.3.5
 
 ## Quick Start
