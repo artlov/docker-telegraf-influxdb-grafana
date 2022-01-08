@@ -9,7 +9,7 @@ ENV LANG C.UTF-8
 # Default versions
 ENV TELEGRAF_VERSION 1.16.3-1
 ENV INFLUXDB_VERSION 1.8.3
-ENV GRAFANA_VERSION  7.3.5
+ENV GRAFANA_VERSION  8.3.3
 ENV CHRONOGRAF_VERSION 1.8.9.1
 
 ENV GF_DATABASE_TYPE=sqlite3
@@ -28,6 +28,7 @@ RUN apt-get -y update && \
   apt-utils \
   ca-certificates \
   libfontconfig1 \
+  adduser \
   curl \
   mc \
   net-tools \

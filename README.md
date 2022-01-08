@@ -13,7 +13,7 @@ The main points of this image are:
 * InfluxDB:          1.8.3
 * Chronograf:        1.8.9.1
 * Telegraf:          1.16.3
-* Grafana:           7.3.5
+* Grafana:           8.3.3
 
 ## Quick Start
 
