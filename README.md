@@ -9,11 +9,11 @@ The main points of this image are:
 
 ## Versions
 
-* Debian:            Buster
-* InfluxDB:          1.8.0
-* Chronograf:        1.8.4
-* Telegraf:          1.14.5-1
-* Grafana:           7.0.5
+* Ubuntu:            20.04
+* InfluxDB:          1.8.3
+* Chronograf:        1.8.9.1
+* Telegraf:          1.16.3
+* Grafana:           7.3.5
 
 ## Quick Start
 
@@ -22,6 +22,7 @@ To start the container the first time launch:
 ```sh
 docker run --ulimit nofile=66000:66000 -d \
   --name artlov-tig \
+  --hostname tig \
   -p 3003:3003 \
   -p 3004:8888 \
   -p 8086:8086 \

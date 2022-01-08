@@ -7,10 +7,10 @@ ENV LANG C.UTF-8
 #ENV TZ=Europe/Tallinn
 
 # Default versions
-ENV TELEGRAF_VERSION 1.14.5-1
-ENV INFLUXDB_VERSION 1.8.0
-ENV GRAFANA_VERSION  7.0.5
-ENV CHRONOGRAF_VERSION 1.8.4
+ENV TELEGRAF_VERSION 1.16.3-1
+ENV INFLUXDB_VERSION 1.8.3
+ENV GRAFANA_VERSION  7.3.5
+ENV CHRONOGRAF_VERSION 1.8.9.1
 
 ENV GF_DATABASE_TYPE=sqlite3
 
@@ -35,7 +35,7 @@ RUN apt-get -y update && \
   supervisor \
   snmp \
   wget && \
- curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+ curl -sL https://deb.nodesource.com/setup_15.x | bash - && \
  apt-get install -y nodejs
 
 # Configure Supervisord, SSH and base env
