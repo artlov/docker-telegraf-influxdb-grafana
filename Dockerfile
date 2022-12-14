@@ -33,7 +33,6 @@ RUN apt-get -y update && \
   libfontconfig \
   mc \
   net-tools \
-  openssh-server \
   supervisor \
   gnupg \
   gnupg2 \
@@ -44,19 +43,15 @@ RUN apt-get -y update && \
  curl -sL https://deb.nodesource.com/setup_15.x | bash - && \
  apt-get install -y nodejs
 
-# Configure Supervisord, SSH and base env
+# Configure Supervisord and base env
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /root
 
 RUN mkdir -p /var/log/supervisor && \
-    mkdir -p /var/run/sshd && \
     echo 'root:root' | chpasswd && \
-    rm -rf .ssh && \
-    rm -rf .profile && \
-    mkdir .ssh
+    rm -rf .profile
 
-COPY ssh/id_rsa .ssh/id_rsa
 COPY bash/profile .profile
 
 # Install InfluxDB
@@ -72,7 +67,7 @@ RUN wget https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION
  dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && rm telegraf_${TELEGRAF_VERSION}_amd64.deb
 
 # Configure Telegraf
-RUN mv -f /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf.default 
+RUN mv -f /etc/telegraf/telegraf.conf /etc/telegraf/telegraf.conf.default
 COPY telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 COPY telegraf/init.sh /etc/init.d/telegraf
 
@@ -99,7 +94,7 @@ RUN chmod 755 /usr/share/snmp/mibs
 #COPY rootfs /tmp
 #RUN /tmp/grafana-plugins.sh
 
-EXPOSE 22/tcp 3003/tcp 8086/tcp 8888/tcp 8125/udp
+EXPOSE 3003/tcp 8086/tcp 8888/tcp 8125/udp
 #VOLUME /var/lib/influxdb /var/lib/grafana /var/lib/backups
 
 # Cleanup

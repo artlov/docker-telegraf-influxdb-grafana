@@ -26,7 +26,6 @@ docker run --ulimit nofile=66000:66000 -d \
   -p 3003:3003 \
   -p 3004:8888 \
   -p 8086:8086 \
-  -p 22022:22 \
   -p 8125:8125/udp \
   -v /path/for/influxdb:/var/lib/influxdb \
   -v /path/for/grafana:/var/lib/grafana \
@@ -58,14 +57,7 @@ Host		Container	Service
 3004		8888		influxdb-admin (chronograf)
 8086		8086		influxdb HTTP API port
 8125		8125		telegraf
-22022		22		sshd
 ```
-## SSH
-
-```sh
-ssh root@localhost -p 22022
-```
-By default root password login disabled. If ssh connection needed, please configure key authentication.
 
 Access from docker host:
 ```
@@ -116,5 +108,5 @@ Port: 8086
 
 ### InfluxDB Shell (CLI)
 
-1. Establish a ssh or docker exec connection with the container
+1. Establish a docker exec connection with the container
 2. Launch `influx` to open InfluxDB Shell (CLI)
