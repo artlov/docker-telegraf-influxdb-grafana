@@ -33,3 +33,7 @@ Docker Telegraf InfluxDB Grafana image
 ## v1.7.0 (2020-12-16)
 
 * Grafana, Influxdb, Telegraf, Chronograf versions bumped
+
+## v1.7.1 (2022-12-14)
+
+* Removed ssh and keys as a possible security flaw
